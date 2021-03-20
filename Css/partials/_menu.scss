@@ -1,14 +1,13 @@
 header{
-    border: 1px solid red;
     width: 100%;
     padding-top: 16px;
 }
 
 .navbar{
     max-width: 1440px;
-    border: 1px solid red;
     margin: 0 auto;
 
+    
     display:flex;
     justify-content: space-between;
     align-items:center;
@@ -16,7 +15,7 @@ header{
 
 .nav-menu{
     display:flex;
-    justify-content:flex-start;
+    justify-content:start;
     align-items:center;
 }
 
@@ -26,6 +25,10 @@ header{
 
     li{
         margin-left: 24px;
+    }
+
+    @include responsive(){
+        display:none;
     }
 }
 
@@ -65,5 +68,48 @@ header{
             height: 40px;
         }
     }
+}
+
+.social-mobile{
+    width: 48px;
+    height: 48px;
+
+    background-color: $white;
+
+    border-radius: 8px;
+
+    display:none;
+
+    @include responsive(){
+        display:block;
+ }
+}
+
+
+.nav-social{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+
+    
+    svg{
+    cursor: pointer;
+    margin-left: 16px;
+    width: 24px;
+
+    path, circle{
+        transition: .7s ease;
+    }
+
+    &:hover{
+        path, circle{
+            fill: $red-light;
+            transform: translate3d(0,-3px,0); // X Y Z //
+        }
+    }
+}
+@include responsive(){
+    display:none;
+}
 }
 
